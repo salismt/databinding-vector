@@ -42,5 +42,20 @@
             android:gravity="center"
             android:text="@{viewModel.text}"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:addTextChangedListener="@{viewModel.textWatcher}"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BBBBBB"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.inputText}"/>
+
     </LinearLayout>
 </layout>
