@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         viewModel.setText("It's clicked");
     }
 
+    public void onChange(View view) {
+        viewModel.setImage(R.drawable.ic_eye);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

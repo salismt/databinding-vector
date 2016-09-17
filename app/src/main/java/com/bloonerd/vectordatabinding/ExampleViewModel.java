@@ -1,8 +1,10 @@
 package com.bloonerd.vectordatabinding;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.support.annotation.DrawableRes;
 import android.text.Editable;
 import android.text.TextWatcher;
 
@@ -12,6 +14,7 @@ public class ExampleViewModel extends BaseObservable {
 
     private String text;
     private String inputText;
+    private int image = R.drawable.ic_android;;
 
     public ExampleViewModel(String text) {
         this.text = text;
@@ -50,5 +53,14 @@ public class ExampleViewModel extends BaseObservable {
         }
     };
 
+    @Bindable
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(@DrawableRes int image) {
+        this.image = image;
+        notifyPropertyChanged(BR.image);
+    }
 
 }
