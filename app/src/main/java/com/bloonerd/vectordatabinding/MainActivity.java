@@ -9,19 +9,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.bloonerd.vectordatabinding.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    private ExampleViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(MainActivity.this, R.layout.activity_main);
 
-        binding.setViewModel(new ExampleViewModel("Hello world"));
+        viewModel = new ExampleViewModel("Hello world");
+        binding.setViewModel(viewModel);
+    }
+
+    public void onButtonClick(View view) {
+        viewModel.setText("It's clicked");
     }
 
     @Override

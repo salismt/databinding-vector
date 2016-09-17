@@ -1,8 +1,12 @@
 package com.bloonerd.vectordatabinding;
 
 import android.content.Context;
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
 
-public class ExampleViewModel {
+import com.bloonerd.vectordatabinding.BR;
+
+public class ExampleViewModel extends BaseObservable {
 
     private String text;
 
@@ -10,7 +14,13 @@ public class ExampleViewModel {
         this.text = text;
     }
 
+    @Bindable
     public String getText() {
         return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+        notifyChange();
     }
 }
